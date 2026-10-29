@@ -1,0 +1,23 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Documentation — Russell</title><link rel="stylesheet" href="/style.css"></head><body><header><a href="/">⚓ Russell</a><nav><a href="/dashboard">Tableau de bord</a></nav></header><main><h1>Documentation de l'API</h1><section class="card"><h2>Vue d'ensemble</h2><p>API REST privée pour gérer les catways, réservations et utilisateurs du port Russell. Les routes API commencent par <code>/api</code> et nécessitent une session authentifiée via <code>POST /login</code>.</p><h2>Tutoriel</h2><p>1. Connectez-vous sur la page d'accueil. 2. Ouvrez le tableau de bord. 3. Créez un catway, puis réservez-le. 4. Consultez les listes et détails.</p><h2>Routes</h2><pre>GET    /api/catways
+GET    /api/catways/:id
+POST   /api/catways
+PUT    /api/catways/:id
+PATCH  /api/catways/:id
+DELETE /api/catways/:id
+GET    /api/catways/:id/reservations
+GET    /api/catways/:id/reservations/:idReservation
+POST   /api/catways/:id/reservations
+DELETE /api/catways/:id/reservations/:idReservation
+GET    /api/reservations
+GET    /api/users
+POST   /api/users
+PUT    /api/users/:id
+DELETE /api/users/:id</pre><h2>Exemples</h2><pre>POST /api/catways
+Content-Type: application/json
+{"catwayNumber":36,"type":"short","catwayState":"bon état"}
+
+PATCH /api/catways/ID
+{"catwayState":"en maintenance"}
+
+POST /api/catways/ID/reservations
+{"clientName":"Alice","boatName":"Étoile","checkIn":"2027-06-01T10:00:00Z","checkOut":"2027-06-04T10:00:00Z"}</pre><h2>Glossaire</h2><p><strong>Catway :</strong> ponton d'amarrage. <strong>Réservation :</strong> occupation d'un catway sur une période. <strong>Session :</strong> connexion maintenue par cookie sécurisé. <strong>PATCH :</strong> mise à jour partielle. <strong>PUT :</strong> remplacement complet.</p><p>Codes usuels : 200 succès, 201 créé, 400 invalide, 401 non connecté, 404 absent, 409 conflit, 500 erreur serveur.</p></section></main></body></html>

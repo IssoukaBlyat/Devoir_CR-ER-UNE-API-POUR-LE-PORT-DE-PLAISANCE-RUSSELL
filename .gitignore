@@ -1,0 +1,21 @@
+
+# Variables d'environnement et secrets
+.env
+.env.*
+!.env.example
+
+# Dépendances Node.js
+node_modules/
+
+# Journaux et fichiers temporaires
+*.log
+npm-debug.log*
+coverage/
+.nyc_output/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Configuration locale
+.vscode/

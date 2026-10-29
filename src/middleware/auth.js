@@ -1,0 +1,1 @@
+export function requireAuth(req,res,next){if(req.session?.userId)return next();if(req.accepts('html')&&!req.path.startsWith('/api/'))return res.redirect('/');return res.status(401).json({error:'Authentification requise'});}
