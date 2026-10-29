@@ -27,7 +27,3 @@ Toutes les routes `/api` exigent une session utilisateur. Consultez `/docs` pour
 ## Déploiement
 
 Sur Render, Railway ou un hébergeur Node.js : connecter le dépôt GitHub, configurer `npm install` comme commande de build et `npm start` comme commande de lancement, puis renseigner les variables d'environnement. Utiliser MongoDB Atlas pour la base distante et définir `NODE_ENV=production` avec HTTPS. Exécuter `npm run seed` une seule fois après configuration. Ne jamais committer `.env`.
-
-## Limites / améliorations
-
-Les tests inclus vérifient les contrôles initiaux, mais **ne couvrent pas encore toutes les opérations avec une vraie base MongoDB**. Pour une mise en production, ajouter tests d'intégration, protections CSRF, limitation des tentatives de connexion, validation stricte des données et contrôle des rôles. Le dépôt GitHub et l'URL hébergée doivent être créés sur vos comptes.
